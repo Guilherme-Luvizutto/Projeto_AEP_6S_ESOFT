@@ -32,4 +32,8 @@ public class OcorrenciaService {
         return repository.save(ocorrencia);
     }
 
+    public void deletar(String id){
+        repository.deleteById(id);
+    }
+
 }
