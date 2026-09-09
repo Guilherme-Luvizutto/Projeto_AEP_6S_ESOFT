@@ -4,6 +4,8 @@ import com.AEP.urbaniza.model.Ocorrencia;
 import com.AEP.urbaniza.repository.OcorrenciaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class OcorrenciaService {
 
@@ -15,6 +17,10 @@ public class OcorrenciaService {
 
     public Ocorrencia criar(Ocorrencia ocorrencia) {
         return repository.save(ocorrencia);
+    }
+
+    public List<Ocorrencia> listarTodos() {
+        return repository.findAll();
     }
 
 }
