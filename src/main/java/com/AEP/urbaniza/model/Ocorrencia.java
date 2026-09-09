@@ -12,4 +12,7 @@ public class Ocorrencia {
     private String categoria;
     private String status;
 
+    public void setId(String id) {
+        this.id = id;
+    }
 }

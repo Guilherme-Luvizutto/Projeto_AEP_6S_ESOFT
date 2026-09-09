@@ -27,4 +27,9 @@ public class OcorrenciaService {
         return repository.findById(id).orElse(null);
     }
 
+    public Ocorrencia atualizar(String id, Ocorrencia ocorrencia) {
+        ocorrencia.setId(id);
+        return repository.save(ocorrencia);
+    }
+
 }
