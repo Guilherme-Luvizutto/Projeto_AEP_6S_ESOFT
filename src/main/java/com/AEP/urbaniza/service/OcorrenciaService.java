@@ -23,4 +23,8 @@ public class OcorrenciaService {
         return repository.findAll();
     }
 
+    public Ocorrencia buscarPorId(String id) {
+        return repository.findById(id).orElse(null);
+    }
+
 }
