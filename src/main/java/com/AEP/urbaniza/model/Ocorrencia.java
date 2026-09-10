@@ -15,4 +15,18 @@ public class Ocorrencia {
     public void setId(String id) {
         this.id = id;
     }
+
+    public String getId() { return id; }
+
+    public String getDescricao() { return descricao; }
+
+    public void setDescricao(String descricao) { this.descricao = descricao; }
+
+    public String getCategoria() { return categoria; }
+
+    public void setCategoria(String categoria) { this.categoria = categoria; }
+
+    public String getStatus() { return status; }
+
+    public void setStatus(String status) { this.status = status; }
 }
