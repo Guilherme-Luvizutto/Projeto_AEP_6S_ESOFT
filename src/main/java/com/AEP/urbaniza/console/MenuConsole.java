@@ -3,11 +3,13 @@ package com.AEP.urbaniza.console;
 import com.AEP.urbaniza.model.Ocorrencia;
 import com.AEP.urbaniza.service.OcorrenciaService;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 
 @Component
+@Profile("!test")
 public class MenuConsole implements CommandLineRunner {
 
     private final OcorrenciaService service;
