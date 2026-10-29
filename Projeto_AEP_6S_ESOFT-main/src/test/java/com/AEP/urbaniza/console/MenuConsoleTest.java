@@ -81,6 +81,7 @@ class MenuConsoleTest {
 
     @Test
     void opcao3_deveAtualizarApenasOsCamposPreenchidos() {
+        // A linha em branco no meio significa "manter a categoria atual"
         String entrada = """
             3
             123
