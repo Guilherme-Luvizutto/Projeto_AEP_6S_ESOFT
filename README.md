@@ -1,345 +1,297 @@
-<h1 align="center">🏙️ Urbaniza</h1>
+# 🏙️ Urbaniza
+
+### Sistema de Gerenciamento de Ocorrências Urbanas
 
 <p align="center">
-  Projeto AEP — 6° Semestre de Engenharia de Software
+  <strong>Identificando problemas, contribuindo para cidades melhores.</strong>
 </p>
 
-<hr>
-
-<h2>📌 Sobre o projeto</h2>
-
-<p>
-O <strong>Urbaniza</strong> é uma aplicação desenvolvida para auxiliar na comunicação e no gerenciamento de problemas relacionados à infraestrutura urbana.
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-21-orange?logo=openjdk" />
+  <img src="https://img.shields.io/badge/Spring%20Boot-4.1.1-6DB33F?logo=springboot" />
+  <img src="https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb" />
+  <img src="https://img.shields.io/badge/Tests-45%20passing-success?logo=junit5" />
+  <img src="https://img.shields.io/badge/Coverage-87%25-brightgreen" />
 </p>
 
-<p>
-A aplicação permite cadastrar, consultar, atualizar e excluir ocorrências relacionadas a problemas encontrados nas cidades.
-</p>
+---
 
-<h2>🎯 ODS escolhida</h2>
+## 📌 Sobre o projeto
 
-<p>
-O projeto está relacionado à <strong>ODS 11 — Cidades e Comunidades Sustentáveis</strong>, da Organização das Nações Unidas (ONU).
-</p>
+O **Urbaniza** é um sistema desenvolvido como parte da Atividade de Estudo Programada (AEP) do curso de Engenharia de Software.
 
-<p>
-A ODS 11 tem como objetivo tornar as cidades e os assentamentos humanos mais inclusivos, seguros, resilientes e sustentáveis.
-</p>
+Seu objetivo é facilitar o registro e o gerenciamento de ocorrências urbanas, como buracos em vias públicas, problemas de infraestrutura, postes danificados e outras situações que necessitam de atenção.
 
-<h2>❗ O problema</h2>
+O projeto está alinhado ao **Objetivo de Desenvolvimento Sustentável 11 (ODS 11)**, que busca tornar as cidades e comunidades mais inclusivas, seguras, resilientes e sustentáveis.
 
-<p>
-Problemas relacionados à infraestrutura urbana são comuns nas cidades, como:
-</p>
+## 🚀 Tecnologias utilizadas
 
-<ul>
-  <li>Buracos nas ruas;</li>
-  <li>Problemas na iluminação pública;</li>
-  <li>Acúmulo de lixo;</li>
-  <li>Outras irregularidades urbanas.</li>
-</ul>
+| Tecnologia | Aplicação |
+|---|---|
+| Java 21 | Linguagem de programação |
+| Spring Boot 4.1.1 | Estrutura da aplicação |
+| Spring Data MongoDB | Integração com o banco de dados |
+| MongoDB Atlas | Banco de dados NoSQL |
+| Maven | Gerenciamento de dependências |
+| JUnit 5 | Testes automatizados |
+| Mockito | Simulação de dependências nos testes |
+| JaCoCo | Análise de cobertura de testes |
 
-<p>
-O Urbaniza propõe uma aplicação simples para registrar essas ocorrências e permitir que elas sejam acompanhadas por meio de um sistema informatizado.
-</p>
+## ⚙️ Funcionalidades
 
-<h2>⚙️ Funcionalidades</h2>
+### 👤 Gerenciamento de usuários
 
-<p>Atualmente, o sistema possui um CRUD de ocorrências:</p>
+- Cadastro de usuários.
+- Listagem de usuários.
+- Busca por ID.
+- Atualização de dados.
+- Exclusão de usuários.
 
-<ul>
-  <li>✅ Cadastrar ocorrência;</li>
-  <li>✅ Listar ocorrências;</li>
-  <li>✅ Buscar ocorrência por ID;</li>
-  <li>✅ Atualizar ocorrência;</li>
-  <li>✅ Excluir ocorrência.</li>
-</ul>
+> **Importante:** o gerenciamento de usuários é realizado exclusivamente pela API REST. O menu do console não possui funcionalidade para cadastrar usuários.
 
-<h3>📋 Dados de uma ocorrência</h3>
+### 📍 Gerenciamento de ocorrências
 
-<ul>
-  <li><strong>ID</strong></li>
-  <li><strong>Descrição</strong></li>
-  <li><strong>Categoria</strong></li>
-  <li><strong>Status</strong></li>
-</ul>
+- Cadastro de ocorrências.
+- Listagem de ocorrências.
+- Atualização de informações.
+- Exclusão de registros.
+- Associação de ocorrências a usuários cadastrados.
+- Registro de localização detalhada.
 
-<h2>🛠️ Tecnologias utilizadas</h2>
+O gerenciamento de ocorrências pode ser realizado tanto pela API REST quanto pelo menu interativo do console.
 
-<ul>
-  <li><strong>Java 21</strong></li>
-  <li><strong>Spring Boot 4.1.1</strong></li>
-  <li><strong>Spring Data MongoDB</strong></li>
-  <li><strong>MongoDB Atlas</strong></li>
-  <li><strong>Maven</strong></li>
-  <li><strong>JUnit 5</strong></li>
-  <li><strong>Mockito</strong></li>
-  <li><strong>JaCoCo</strong></li>
-  <li><strong>Git e GitHub</strong></li>
-</ul>
+No console, o usuário responsável é identificado por meio do e-mail cadastrado previamente na coleção de usuários.
 
-<h2>📁 Estrutura do projeto</h2>
+---
 
-<pre>
-src/
-├── main/
-│   ├── java/com/AEP/urbaniza/
-│   │   ├── console/
-│   │   ├── controller/
-│   │   ├── model/
-│   │   ├── repository/
-│   │   ├── service/
-│   │   └── UrbanizaApplication.java
-│   │
-│   └── resources/
-│       └── application.properties
-│
-└── test/
-    └── java/com/AEP/urbaniza/
-        ├── console/
-        ├── controller/
-        ├── service/
-        └── UrbanizaApplicationTests.java
-</pre>
+## 🗄️ Estrutura do banco de dados
 
-<h2>🗄️ Banco de dados</h2>
+O Urbaniza utiliza o **MongoDB Atlas**, um banco de dados NoSQL orientado a documentos.
 
-<p>
-O projeto utiliza o <strong>MongoDB Atlas</strong> como banco de dados.
-</p>
+A aplicação trabalha com duas coleções principais:
 
-<p>
-A aplicação utiliza uma única coleção:
-</p>
+### Coleção `usuarios`
 
-<pre>
-ocorrencias
-</pre>
+Armazena os dados dos usuários cadastrados.
 
-<p>
-A conexão com o banco é configurada por meio da variável de ambiente
-<strong>MONGODB_URI</strong>.
-</p>
+| Campo | Descrição |
+|---|---|
+| `id` | Identificador do usuário |
+| `nome` | Nome do usuário |
+| `email` | E-mail do usuário |
 
-<h3>Exemplo</h3>
+### Coleção `ocorrencias`
 
-<pre>
-MONGODB_URI=mongodb+srv://USUARIO:SENHA@SEU_CLUSTER.mongodb.net/urbaniza
-</pre>
+Armazena os registros das ocorrências urbanas.
 
-<p>
-<strong>⚠️ Importante:</strong> as credenciais reais do MongoDB não devem ser adicionadas ao repositório.
-</p>
+| Campo | Descrição |
+|---|---|
+| `id` | Identificador da ocorrência |
+| `descricao` | Descrição do problema |
+| `categoria` | Categoria da ocorrência |
+| `status` | Situação atual |
+| `usuarioId` | Identificador do usuário responsável |
+| `localizacao` | Objeto incorporado com os dados do endereço |
 
-<h2>▶️ Como executar</h2>
+### 🔗 Relacionamento entre coleções
 
-<h3>Pré-requisitos</h3>
+O relacionamento entre usuários e ocorrências é realizado por meio do campo `usuarioId`, que armazena o identificador do usuário responsável pela ocorrência.
 
-<ul>
-  <li>Java 21 instalado;</li>
-  <li>Acesso ao MongoDB Atlas;</li>
-  <li>Variável de ambiente <code>MONGODB_URI</code> configurada.</li>
-</ul>
+Essa associação é controlada pela própria aplicação, sem utilização de chaves estrangeiras automáticas.
 
-<h3>Executar a aplicação</h3>
+### 📦 Objeto incorporado: `Localizacao`
 
-<p>No diretório raiz do projeto, execute:</p>
+A localização é armazenada diretamente dentro do documento de ocorrência, utilizando um objeto incorporado (*Embedded Document*).
 
-<pre>
-.\mvnw.cmd spring-boot:run
-</pre>
+Sua estrutura contém:
 
-<h2>⚠️ Problemas com arquivos temporários no Windows</h2>
+- `rua`
+- `bairro`
+- `numero`
+- `cidade`
 
-<p>
-Em alguns casos, o Windows pode manter arquivos da pasta <code>target</code> em uso,
-impedindo que o Maven execute o comando <code>clean</code> corretamente.
-</p>
+Essa abordagem permite armazenar os dados relacionados ao endereço junto à ocorrência, sem a necessidade de criar uma terceira coleção.
 
-<p>
-Caso isso aconteça, remova manualmente a pasta <code>target</code> pelo terminal:
-</p>
+---
 
-<pre>
-rmdir /S /Q target
-</pre>
+## 🌐 API REST
 
-<p>
-Depois, execute novamente:
-</p>
+A API disponibiliza endpoints para o gerenciamento dos dados.
 
-<pre>
-.\mvnw.cmd verify
-</pre>
+**Endereço local:** `http://localhost:8080`
 
-<h2>💻 Menu do console</h2>
+### 👤 Endpoints de usuários
 
-<p>
-A aplicação possui um menu simples executado diretamente pelo terminal:
-</p>
+| Método | Endpoint | Operação |
+|---|---|---|
+| `POST` | `/usuarios` | Cadastrar usuário |
+| `GET` | `/usuarios` | Listar usuários |
+| `GET` | `/usuarios/{id}` | Buscar por ID |
+| `PUT` | `/usuarios/{id}` | Atualizar usuário |
+| `DELETE` | `/usuarios/{id}` | Excluir usuário |
 
-<pre>
-===== URBANIZA =====
+### 📍 Endpoints de ocorrências
+
+| Método | Endpoint | Operação |
+|---|---|---|
+| `POST` | `/ocorrencias` | Cadastrar ocorrência |
+| `GET` | `/ocorrencias` | Listar ocorrências |
+| `GET` | `/ocorrencias/{id}` | Buscar por ID |
+| `PUT` | `/ocorrencias/{id}` | Atualizar ocorrência |
+| `DELETE` | `/ocorrencias/{id}` | Excluir ocorrência |
+
+---
+
+## 💻 Menu interativo do console
+
+Além da API REST, o sistema possui um menu interativo para o gerenciamento de ocorrências.
+
+```text
+          ===== URBANIZA =====
+
 1 - Cadastrar ocorrência
 2 - Listar ocorrências
+3 - Atualizar ocorrência
+4 - Deletar ocorrência
 0 - Sair
-</pre>
 
-<h3>1 — Cadastrar ocorrência</h3>
+Escolha:
+```
 
-<p>
-Ao escolher a opção <strong>1</strong>, o sistema solicita:
-</p>
+**Atenção:** o menu do console permite somente operações relacionadas às ocorrências. O cadastro de usuários deve ser realizado pelo endpoint `POST /usuarios`.
 
-<ul>
-  <li>Descrição;</li>
-  <li>Categoria;</li>
-  <li>Status.</li>
-</ul>
+Durante o cadastro de uma ocorrência pelo console, o sistema solicita o e-mail de um usuário existente para estabelecer o relacionamento automaticamente.
 
-<h3>2 — Listar ocorrências</h3>
+---
 
-<p>
-Ao escolher a opção <strong>2</strong>, o sistema apresenta todas as ocorrências cadastradas.
-</p>
+## 🛠️ Como executar o projeto
 
-<h3>0 — Sair</h3>
+### 1. Pré-requisitos
 
-<p>
-A opção <strong>0</strong> encerra a aplicação.
-</p>
+Antes de iniciar, tenha instalado:
 
-<h2>🌐 API REST</h2>
+- [Java JDK 21](https://adoptium.net/)
+- [MongoDB Atlas](https://www.mongodb.com/atlas)
+- Git (opcional, para clonar o repositório)
 
-<table>
-  <thead>
-    <tr>
-      <th>Método</th>
-      <th>Endpoint</th>
-      <th>Função</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>POST</td>
-      <td><code>/ocorrencias</code></td>
-      <td>Cadastrar ocorrência</td>
-    </tr>
-    <tr>
-      <td>GET</td>
-      <td><code>/ocorrencias</code></td>
-      <td>Listar ocorrências</td>
-    </tr>
-    <tr>
-      <td>GET</td>
-      <td><code>/ocorrencias/{id}</code></td>
-      <td>Buscar ocorrência por ID</td>
-    </tr>
-    <tr>
-      <td>PUT</td>
-      <td><code>/ocorrencias/{id}</code></td>
-      <td>Atualizar ocorrência</td>
-    </tr>
-    <tr>
-      <td>DELETE</td>
-      <td><code>/ocorrencias/{id}</code></td>
-      <td>Excluir ocorrência</td>
-    </tr>
-  </tbody>
-</table>
+### 2. Clonar o repositório
 
-<h2>🧪 Testes automatizados</h2>
+```bash
+git clone URL_DO_REPOSITORIO
+```
 
-<p>
-O projeto utiliza <strong>JUnit 5</strong> e <strong>Mockito</strong> para a realização dos testes automatizados.
-</p>
+Entre na pasta do projeto:
 
-<p>Para executar os testes e gerar o relatório de cobertura:</p>
+```bash
+cd Projeto_AEP_6S_ESOFT
+```
 
-<pre>
-.\mvnw.cmd verify
-</pre>
+### 3. Configurar o banco de dados
 
-<p>Atualmente o projeto possui:</p>
+Configure a variável de ambiente `MONGODB_URI` com a URI de conexão do seu banco MongoDB Atlas.
 
-<ul>
-  <li>✅ 15 testes;</li>
-  <li>✅ 15 testes aprovados;</li>
-  <li>✅ 0 falhas;</li>
-  <li>✅ 0 erros.</li>
-</ul>
+Mantenha as credenciais protegidas e não publique informações de acesso ao banco no repositório.
 
-<h2>📊 Cobertura de testes</h2>
+### 4. Executar a aplicação
 
-<p>
-A cobertura do código é analisada utilizando o <strong>JaCoCo</strong>.
-</p>
+No terminal, execute:
 
-<table>
-  <thead>
-    <tr>
-      <th>Métrica</th>
-      <th>Cobertura</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Instruções</td>
-      <td><strong>97,9%</strong></td>
-    </tr>
-    <tr>
-      <td>Linhas</td>
-      <td><strong>97,1%</strong></td>
-    </tr>
-    <tr>
-      <td>Branches</td>
-      <td><strong>100%</strong></td>
-    </tr>
-    <tr>
-      <td>Métodos</td>
-      <td><strong>100%</strong></td>
-    </tr>
-    <tr>
-      <td>Complexidade</td>
-      <td><strong>100%</strong></td>
-    </tr>
-  </tbody>
-</table>
+```powershell
+.\mvnw.cmd spring-boot:run
+```
 
-<p>
-O relatório HTML do JaCoCo pode ser encontrado após a execução dos testes em:
-</p>
+Após a inicialização, o menu do console estará disponível e a API REST poderá ser acessada pelo endereço local.
 
-<pre>
-target/site/jacoco/index.html
-</pre>
+---
 
-<h2>📦 Controle de versão</h2>
+## 🧪 Testes automatizados
 
-<p>
-O projeto utiliza <strong>Git</strong> para controle de versão e está hospedado no GitHub.
-</p>
+O projeto utiliza **JUnit 5** e **Mockito** para verificar o comportamento das classes, serviços, controladores e funcionalidades do sistema.
 
-<p>
-<strong>Repositório:</strong>
-<a href="https://github.com/Guilherme-Luvizutto/Projeto_AEP_6S_ESOFT">
-Projeto_AEP_6S_ESOFT
-</a>
-</p>
+### Executar os testes
 
-<h2>📚 Desenvolvimento</h2>
+```powershell
+.\mvnw.cmd clean test
+```
 
-<p>
-Este projeto corresponde à primeira etapa da AEP do 6° semestre de Engenharia de Software.
-</p>
+### Executar os testes e gerar a cobertura
 
-<p>
-A implementação inicial foi mantida de forma simples, priorizando o funcionamento do CRUD, a persistência dos dados no MongoDB, os testes automatizados e a cobertura de código.
-</p>
+```powershell
+.\mvnw.cmd clean verify
+```
 
-<hr>
+### 📊 Resultados dos testes
+
+<details>
+<summary><strong>Ver resultados da última execução</strong></summary>
+
+| Resultado | Quantidade |
+|---|---:|
+| Testes executados | 45 |
+| Falhas | 0 |
+| Erros | 0 |
+| Ignorados | 0 |
+
+</details>
+
+### 📈 Cobertura de código — JaCoCo
 
 <p align="center">
-  <strong>Projeto AEP — Engenharia de Software</strong>
+  <img src="https://img.shields.io/badge/Instructions-87%25-brightgreen" />
+  <img src="https://img.shields.io/badge/Branches-70%25-green" />
+  <img src="https://img.shields.io/badge/Lines-90%25-brightgreen" />
+  <img src="https://img.shields.io/badge/Methods-97%25-brightgreen" />
+  <img src="https://img.shields.io/badge/Classes-100%25-success" />
 </p>
 
+| Métrica | Cobertura |
+|---|---:|
+| Instruções | **87%** |
+| Branches | **70%** |
+| Linhas | **90%** |
+| Métodos | **97%** |
+| Classes | **100%** |
+
+A cobertura de instruções atende ao requisito mínimo de 70% estabelecido para o projeto.
+
+O relatório detalhado é gerado em:
+
+```text
+target/site/jacoco/index.html
+```
+
+---
+
+## ✅ Validação funcional
+
+Além dos testes automatizados, foram realizados testes manuais utilizando a API REST e o menu do console.
+
+Foram validadas as operações de cadastro, consulta, atualização e exclusão de usuários e ocorrências pela API.
+
+Também foram testadas todas as operações de gerenciamento de ocorrências pelo console.
+
+Os testes confirmaram:
+
+- Funcionamento das operações CRUD.
+- Persistência dos dados no MongoDB Atlas.
+- Associação entre usuários e ocorrências.
+- Armazenamento de localização como objeto incorporado.
+- Identificação de usuários pelo e-mail durante o cadastro de ocorrências pelo console.
+
+## 🎯 Objetivo de Desenvolvimento Sustentável
+
+O Urbaniza está relacionado ao **ODS 11 — Cidades e Comunidades Sustentáveis**, especialmente à proposta de contribuir para a identificação e organização de problemas urbanos.
+
+## 📝 Considerações finais
+
+O desenvolvimento do Urbaniza proporcionou a aplicação prática de conceitos de programação orientada a objetos, desenvolvimento de APIs REST, persistência de dados com MongoDB e testes automatizados.
+
+A utilização de referências entre documentos e objetos incorporados permitiu explorar diferentes estratégias de modelagem em bancos de dados NoSQL.
+
+O projeto também contribuiu para o desenvolvimento de boas práticas de organização, qualidade, manutenção e validação de software.
+
+---
+
+<p align="center">
+  <strong>Urbaniza — Tecnologia a serviço de cidades melhores. 🏙️</strong>
+</p>
