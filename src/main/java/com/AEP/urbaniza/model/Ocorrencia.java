@@ -11,6 +11,8 @@ public class Ocorrencia {
     private String descricao;
     private String categoria;
     private String status;
+    private String usuarioId;
+    private Localizacao localizacao;
 
     public void setId(String id) {
         this.id = id;
@@ -29,4 +31,20 @@ public class Ocorrencia {
     public String getStatus() { return status; }
 
     public void setStatus(String status) { this.status = status; }
+
+    public String getUsuarioId() {
+        return usuarioId;
+    }
+
+    public void setUsuarioId(String usuarioId) {
+        this.usuarioId = usuarioId;
+    }
+
+    public Localizacao getLocalizacao() {
+        return localizacao;
+    }
+
+    public void setLocalizacao(Localizacao localizacao) {
+        this.localizacao = localizacao;
+    }
 }
